@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
 
 const dessertSchema = new mongoose.Schema({
-    text: String,
+    name: String,
+    recipe: String,
+    newSubmit: Boolean,
 })
+
+const Dessert = mongoose.model('Dessert', dessertSchema);
+module.exports = Dessert;

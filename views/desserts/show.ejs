@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= item.name %></title>
+    <title><%= recipe.name %></title>
 </head>
 <body>
-    <h1><%= item.name %></h1>
-    <% if (index === 0) { %>
-        <p>YUM!</p>
-    <% } %>
+    <a href="/">Home</a>
+    <a href="/desserts">Recipe Menu</Menu></a>
+    <a href="/desserts/new">Submit Recipe</a>
+    <h1><%= recipe.name %></h1>
+
+    
+    <p><%= recipe.ingredients %></p>
 </body>
 </html>
