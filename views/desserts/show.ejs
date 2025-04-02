@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= recipe.name %></title>
-</head>
-<body>
-    <a href="/">Home</a>
-    <a href="/desserts">Recipe Menu</Menu></a>
-    <a href="/desserts/new">Submit Recipe</a>
+<%- include('../partials/html-head') %>
+    <%- include('../partials/nav') %>
     <h1><%= recipe.name %></h1>
-
-    
-    <p><%= recipe.ingredients %></p>
+    <% if (recipe.newSubmit) { %>
+        <p>This is a new submission.</p>
+    <% } %>   
+      <p><%= recipe.recipe %></p>
+      <form action="/desserts/<%=recipe._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= recipe.name %></button>
+    </form>
+    <a href="/desserts/<%= recipe._id %>/edit">Edit <%= recipe.name %></a>
 </body>
 </html>

@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-</head>
-<body>
-    <a class="nav" href="/">Home</a>
-    <a href="/desserts">Recipe Menu</Menu></a>
-    <a href="/desserts/new">Submit Recipe</a>
-    <h1>Our Selection of Decadent Desserts Recipes</h1>
-    
-        <% recipes.forEach((recipe) => { %>
-            <a href="/desserts/<%= recipe._id %>">
-                <p><%= recipe.name %></p>
-            </a>
-            
-        <% }) %>
-</body>
-</html>
+<%- include('../partials/html-head') %>
+    <%- include('../partials/nav') %>
+        <h1>Your Dessert Recipes</h1>
+
+            <% recipes.forEach((recipe)=> { %>
+                <a class="recipe" href="/desserts/<%= recipe._id %>">
+                    <p>
+                        <%= recipe.name %>
+                    </p>
+                </a>
+
+                <% }) %>
+        </div>
+        </body>
+
+        </html>
